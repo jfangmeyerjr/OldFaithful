@@ -1,0 +1,49 @@
+#Old Faithful Regression capacitación.
+# Querido Grandad. Gracias por traerme a Yellowstone National Park!
+head(faithful)
+#built-in data
+#make eruptions linear model
+eruptions.lm <- lm(eruptions ~ waiting, data=faithful)
+summary(eruptions.lm)
+#Call:
+#  lm(formula = eruptions ~ waiting, data = faithful)
+
+#Residuals:
+#  Min       1Q   Median       3Q      Max 
+#-1.29917 -0.37689  0.03508  0.34909  1.19329 
+
+#Coefficients:
+#  Estimate Std. Error t value Pr(>|t|)    
+#(Intercept) -1.874016   0.160143  -11.70   <2e-16 ***
+#  waiting      0.075628   0.002219   34.09   <2e-16 ***
+  ---
+ # Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+
+#Residual standard error: 0.4965 on 270 degrees of freedom
+#Multiple R-squared:  0.8115,	Adjusted R-squared:  0.8108 
+#F-statistic:  1162 on 1 and 270 DF,  p-value: < 2.2e-16
+# pendiente significativa diferente que cero. Mientras más esperas, más erupciones serán
+
+# probemos la regresión al revés
+waiting.lm <- lm(waiting ~ eruptions, data = faithful)
+summary(waiting.lm)
+
+# SCATTER PLOT TUTORIAL
+duration <- faithful$eruptions
+waiting <- faithful$waiting
+head(cbind(duration, waiting))
+head(cbind(one, two))
+waiting <- faithful$eruptions
+head(faithful)
+head(cbind(duration, waiting))
+head(faithful)
+waiting <- faithful$waiting
+head(cbind(duration, waiting))
+one <- c(1,2,3)
+two <- c(2,4,6)
+head(cbind(one, two, duration))
+#scatterplot al chile
+plot(duration, waiting, xlab="Eruption duration", ylab="Time waited prior to eruption")
+abline(lm(waiting ~ duration))
+plot(waiting, duration, xlab="Time waited antes", ylab="Eruption payoff")
+abline(lm(duration ~ waiting))
